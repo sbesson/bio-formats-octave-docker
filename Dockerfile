@@ -1,5 +1,8 @@
 FROM openmicroscopy/octave:0.3.0
-MAINTAINER ome-devel@lists.openmicroscopy.org.uk
+LABEL maintainer="ome-devel@lists.openmicroscopy.org.uk"
+LABEL org.opencontainers.image.created="unknown"
+LABEL org.opencontainers.image.revision="unknown"
+LABEL org.opencontainers.image.source="https://github.com/ome/bio-formats-octave-docker"
 
 ARG VERSION=6.0.0-m3
 
