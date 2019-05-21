@@ -4,7 +4,7 @@ COMMIT = $(shell git rev-parse HEAD || echo -n NOTGIT)
 SHELL = bash
 
 REPO ?= openmicroscopy
-NAME ?= bio-formats-docker
+NAME ?= bio-formats-octave
 ORIGIN ?= origin
 VERSION_VAR ?= VERSION
 
@@ -30,7 +30,7 @@ ifndef VERSION
 	$(error VERSION is undefined)
 endif
 
-	perl -i -pe 's/$(VERSION_VAR)=(\S+)/$VERSION_VAR=$(VERSION)/' Dockerfile
+	perl -i -pe 's/$(VERSION_VAR)=(\S+)/$(VERSION_VAR)=$(VERSION)/' Dockerfile
 	perl -i -pe 's/(org.opencontainers.image.created=)"([^"]+)"/$$1"$(RELEASE)"/' Dockerfile
 	perl -i -pe 's/(org.opencontainers.image.revision=)"([^"]+)"/$$1"$(COMMIT)"/' Dockerfile
 

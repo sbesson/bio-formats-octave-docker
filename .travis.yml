@@ -18,6 +18,6 @@ script:
 
 deploy:
   provider: script
-  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && make build-image VERSION=$TRAVIS_TAG && make push-image VERSION=$TRAVIS_TAG
+  script: bash docker_deploy.sh
   on:
     tags: true
