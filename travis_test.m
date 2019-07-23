@@ -12,3 +12,5 @@ test_bfopen(arg_list{1});
 javaMethod('setRootLevel', 'loci.common.DebugTools', 'DEBUG');
 
 test_bfopen(arg_list{1});
+
+test_bfsave();
